@@ -159,3 +159,23 @@ footer {
     background-color: rgba(255, 255, 255, 0.40) !important;
     border-color: transparent !important;
 }
+.logo-menu {
+    width: 9vw;
+    height: 10vh !important;
+
+}
+.menu {
+    top:25px;
+    left: 120px;
+}
+
+.sm-logos {
+    width: 2vw;
+    height: 4vh !important;
+    top:25px;
+    right: 50px;
+}
+.bio {
+    top:150px;
+    text-align: justify;
+}
