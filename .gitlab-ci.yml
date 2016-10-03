@@ -1,11 +1,78 @@
-pages:
-  stage: deploy
+# pages:
+#   stage: deploy
+#   script:
+#   - mkdir .public
+#   - cp -r web/* .public
+#   - mv .public public
+#   artifacts:
+#     paths:
+#     - public
+#   only:
+#   - master
+
+###### NODE #####
+# image: node:latest
+
+# cache:
+#   key: "$CI_BUILD_NAME"
+#   paths:
+#     - node_modules/
+#     - bower_components/
+#   untracked: true
+
+# stages:
+#   - deploy
+
+# pages:
+#   stage: deploy
+#   script:
+#   # - mkdir .public
+#   # - cp -r web/* .public
+#   # - mv .public public
+#   artifacts:
+#     paths:
+#     - public
+#   only:
+#   - master
+
+
+#DSAASD
+image: node:latest
+stages:
+  - build
+  - build_assets
+  - deploy
+
+build:
+  stage: build
   script:
-  - mkdir .public
-  - cp -r web/* .public
-  - mv .public public
+    - npm install
+    - bower install
+  cache:
+    key: ${CI_BUILD_REF_NAME}
+    paths:
+      - node_modules/
+      - assets/bower_components
   artifacts:
     paths:
-    - public
+      - node_modules/
+      - assets/bower_components
+      - build/
+
+build_assets:
+  stage: build_assets
+  script:
+    - node_modules/grunt-cli/bin/grunt prod
+  artifacts:
+    paths:
+      - public/
+
+deploy:
+  stage: deploy
+  script:
+    - mv .public public
+  artifacts:
+    paths:
+      - public/
   only:
   - master
