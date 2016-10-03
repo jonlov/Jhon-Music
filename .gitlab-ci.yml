@@ -19,7 +19,6 @@ build:
     paths:
       - node_modules/
       - assets/bower_components
-      - build/
 
 # build_assets:
 #   stage: build_assets

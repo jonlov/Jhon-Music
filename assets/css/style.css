@@ -32,9 +32,9 @@ section {
     max-width: none;
     background-color: #373B44;
     height: 100vh;
-    &:nth-of-type(2n) {
+    /*&:nth-of-type(2n) {
         background-color: #FE4B74;
-    }
+    }*/
 }
 
 .content {
@@ -74,11 +74,12 @@ footer {
     text-align: center;
     background-color: #373B44;
     color: white;
-    a {
-        color: #FE4B74;
-        font-weight: 500;
-        text-decoration: none;
-    }
+}
+
+footer a {
+    color: #FE4B74;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .bg-browser-size {
