@@ -65,8 +65,8 @@
 # (credit Addy Osmani, @addyosmani)
 # 
 ################################################
-web/bower_components
-#node_modules
+assets/bower_components
+node_modules
 
 
 
