@@ -65,7 +65,7 @@ build_assets:
     - node_modules/grunt-cli/bin/grunt prod
   artifacts:
     paths:
-      - public/
+      - .public/
 
 deploy:
   stage: deploy
