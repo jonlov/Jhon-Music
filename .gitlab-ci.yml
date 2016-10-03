@@ -47,7 +47,7 @@ build:
   stage: build
   script:
     - npm install
-    - bower install
+    - node_modules/bower/bin/bower install
   cache:
     key: ${CI_BUILD_REF_NAME}
     paths:
