@@ -102,13 +102,13 @@ var SampleApp = function() {
     self.createRoutes = function() {
         self.routes = {};
 
-        self.routes['/'] = function(req, res) {
-            //we are not in a request handler so we may use readFileSync
-            var content = fs.readFileSync(path.join(__dirname, '.public', 'views', 'index.html'), 'utf-8'),
-                compiled = ejs.compile(content);
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(compiled({ NODE_ENV: self.NODE_ENV }));
-        };
+        // self.routes['/'] = function(req, res) {
+        //     //we are not in a request handler so we may use readFileSync
+        //     var content = fs.readFileSync(path.join(__dirname, 'public', 'views', 'index.html'), 'utf-8'),
+        //         compiled = ejs.compile(content);
+        //     res.writeHead(200, { 'Content-Type': 'text/html' });
+        //     res.end(compiled({ NODE_ENV: self.NODE_ENV }));
+        // };
 
         // self.routes['/favicon.ico'] = function(req, res) {
         //     res.setHeader('Content-Type', 'image/x-icon');
@@ -124,10 +124,7 @@ var SampleApp = function() {
     self.initializeServer = function() {
         self.createRoutes();
         self.app = express();
-        self.app.use('/', express.static(path.join(__dirname, '.public')));
-
-        self.app.engine('html', require('ejs').renderFile);
-        self.app.set('view engine', 'html');
+        self.app.use('/', express.static(path.join(__dirname, 'public')));
 
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {

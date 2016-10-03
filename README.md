@@ -28,7 +28,7 @@ the server will start at [localhost:8080][] and it will watch for code changes a
 ## NOTES
 * If you install a new bower dependency and you want to load it in the "index.html" file, just open the "pipeline.js" file inside the "tasks" folder and add the bower css and js files there.
 
-	**PLEASE DON'T ADD THE SCRIPTS AND LINKS DIRECTLY TO THE "INDEX.HTML" FILE.**
+	**PLEASE DON'T ADD THE JAVASCRIPT SCRIPTS AND CSS LINKS DIRECTLY TO THE "INDEX.HTML" FILE.**
 
 
 * The "assets" folder is where all the public files go, do not try to put new files outside the "assets" folder.
