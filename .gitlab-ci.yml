@@ -65,11 +65,13 @@ build_assets:
     - node_modules/grunt-cli/bin/grunt prod
   artifacts:
     paths:
-      - .public/
+      - public/
 
-deploy:
+pages:
   stage: deploy
   script:
+    - mkdir .public
+    - cp -r public .public
     - mv .public public
   artifacts:
     paths:

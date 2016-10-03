@@ -80,6 +80,7 @@ node_modules
 ################################################
 .tmp
 .public
+public
 dump.rdb
 
 

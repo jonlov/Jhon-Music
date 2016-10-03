@@ -5,13 +5,13 @@ Jhon Music Website
 
 ## Installation
 
-To run this project local, clone the git and then inside the folder with the terminal run  
+To run this project local, clone the git and then inside the folder with the terminal run **(If you dont have nodejs installed, install it first)**
 
 ```
 npm install
 ```
 
-and then (if you dont have bower install it first).
+and then **(If you dont have bower installed, install it first)**
 
 ```
 bower install
@@ -23,7 +23,7 @@ that's it! Now you can run the "Start Server" bash file if you are on a mac or j
 node_modules/grunt-cli/bin/grunt
 ```
 
-server will start at [localhost:8080][] and it will watch for code changes and reload automatically, you don't need to restart the server everytime you change something.
+the server will start at [localhost:8080][] and it will watch for code changes and reload automatically, **you don't need to restart the server everytime you change something**.
 
 ## NOTES
 * If you install a new bower dependency and you want to load it in the "index.html" file, just open the "pipeline.js" file inside the "tasks" folder and add the bower css and js files there.

@@ -23,15 +23,15 @@ module.exports = function(grunt) {
                 appRoot: pipeline.temporalFolder
             },
             files: {
-                '.public/**/*.html': [
+                'public/**/*.html': [
                     require('../pipeline').jsFilesToInject,
                     require('../pipeline').jsFilesToConcat
                 ],
-                '.public/tpl/views/**/*.html': [
+                'public/tpl/views/**/*.html': [
                     require('../pipeline').jsFilesToInject,
                     require('../pipeline').jsFilesToConcat
                 ],
-                '.public/tpl/views/**/*.ejs': [
+                'public/tpl/views/**/*.ejs': [
                     require('../pipeline').jsFilesToInject,
                     require('../pipeline').jsFilesToConcat
                 ]
@@ -47,15 +47,15 @@ module.exports = function(grunt) {
                 relative: true
             },
             files: {
-                '.public/**/*.html': [
+                'public/**/*.html': [
                     require('../pipeline').jsFilesToInject,
                     require('../pipeline').jsFilesToConcat
                 ],
-                '.public/tpl/views/**/*.html': [
+                'public/tpl/views/**/*.html': [
                     require('../pipeline').jsFilesToInject,
                     require('../pipeline').jsFilesToConcat
                 ],
-                '.public/tpl/views/**/*.ejs': [
+                'public/tpl/views/**/*.ejs': [
                     require('../pipeline').jsFilesToInject,
                     require('../pipeline').jsFilesToConcat
                 ]
@@ -70,16 +70,16 @@ module.exports = function(grunt) {
                 appRoot: pipeline.temporalFolder
             },
             files: {
-                '.public/**/*.html': [
-                    '.public/js/production.js',
+                'public/**/*.html': [
+                    'public/js/production.js',
                     require('../pipeline').jsFilesToInject
                 ],
-                '.public/tpl/views/**/*.html': [
-                    '.public/js/production.js',
+                'public/tpl/views/**/*.html': [
+                    'public/js/production.js',
                     require('../pipeline').jsFilesToInject
                 ],
-                '.public/tpl/views/**/*.ejs': [
-                    '.public/js/production.js',
+                'public/tpl/views/**/*.ejs': [
+                    'public/js/production.js',
                     require('../pipeline').jsFilesToInject
                 ]
             }
@@ -94,16 +94,16 @@ module.exports = function(grunt) {
                 relative: true
             },
             files: {
-                '.public/**/*.html': [
-                    '.public/js/production.js',
+                'public/**/*.html': [
+                    'public/js/production.js',
                     require('../pipeline').jsFilesToInject
                 ],
-                '.public/tpl/views/**/*.html': [
-                    '.public/js/production.js',
+                'public/tpl/views/**/*.html': [
+                    'public/js/production.js',
                     require('../pipeline').jsFilesToInject
                 ],
-                '.public/tpl/views/**/*.ejs': [
-                    '.public/js/production.js',
+                'public/tpl/views/**/*.ejs': [
+                    'public/js/production.js',
                     require('../pipeline').jsFilesToInject
                 ]
             }
@@ -117,15 +117,15 @@ module.exports = function(grunt) {
                 appRoot: pipeline.temporalFolder
             },
             files: {
-                '.public/**/*.html': [
+                'public/**/*.html': [
                     require('../pipeline').cssFilesToInject,
                     require('../pipeline').cssFilesToConcat
                 ],
-                '.public/tpl/views/**/*.html': [
+                'public/tpl/views/**/*.html': [
                     require('../pipeline').cssFilesToInject,
                     require('../pipeline').cssFilesToConcat
                 ],
-                '.public/tpl/views/**/*.ejs': [
+                'public/tpl/views/**/*.ejs': [
                     require('../pipeline').cssFilesToInject,
                     require('../pipeline').cssFilesToConcat
                 ]
@@ -141,15 +141,15 @@ module.exports = function(grunt) {
                 relative: true
             },
             files: {
-                '.public/**/*.html': [
+                'public/**/*.html': [
                     require('../pipeline').cssFilesToInject,
                     require('../pipeline').cssFilesToConcat
                 ],
-                '.public/tpl/views/**/*.html': [
+                'public/tpl/views/**/*.html': [
                     require('../pipeline').cssFilesToInject,
                     require('../pipeline').cssFilesToConcat
                 ],
-                '.public/tpl/views/**/*.ejs': [
+                'public/tpl/views/**/*.ejs': [
                     require('../pipeline').cssFilesToInject,
                     require('../pipeline').cssFilesToConcat
                 ]
@@ -164,16 +164,16 @@ module.exports = function(grunt) {
                 appRoot: pipeline.temporalFolder
             },
             files: {
-                '.public/index.html': [
-                    '.public/css/production.css',
+                'public/index.html': [
+                    'public/css/production.css',
                     require('../pipeline').cssFilesToInject
                 ],
-                '.public/tpl/views/**/*.html': [
-                    '.public/css/production.css',
+                'public/tpl/views/**/*.html': [
+                    'public/css/production.css',
                     require('../pipeline').cssFilesToInject
                 ],
-                '.public/tpl/views/**/*.ejs': [
-                    '.public/css/production.css',
+                'public/tpl/views/**/*.ejs': [
+                    'public/css/production.css',
                     require('../pipeline').cssFilesToInject
                 ]
             }
@@ -188,16 +188,16 @@ module.exports = function(grunt) {
                 relative: true
             },
             files: {
-                '.public/index.html': [
-                    '.public/css/production.css',
+                'public/index.html': [
+                    'public/css/production.css',
                     require('../pipeline').cssFilesToInject
                 ],
-                '.public/tpl/views/**/*.html': [
-                    '.public/css/production.css',
+                'public/tpl/views/**/*.html': [
+                    'public/css/production.css',
                     require('../pipeline').cssFilesToInject
                 ],
-                '.public/tpl/views/**/*.ejs': [
-                    '.public/css/production.css',
+                'public/tpl/views/**/*.ejs': [
+                    'public/css/production.css',
                     require('../pipeline').cssFilesToInject
                 ]
             }
@@ -212,9 +212,9 @@ module.exports = function(grunt) {
                 appRoot: pipeline.temporalFolder
             },
             files: {
-                '.public/index.html': ['.public/jst.js'],
-                '.public/tpl/views/**/*.html': ['.public/jst.js'],
-                '.public/tpl/views/**/*.ejs': ['.public/jst.js']
+                'public/index.html': ['public/jst.js'],
+                'public/tpl/views/**/*.html': ['public/jst.js'],
+                'public/tpl/views/**/*.ejs': ['public/jst.js']
             }
         },
 
@@ -226,7 +226,7 @@ module.exports = function(grunt) {
                 appRoot: pipeline.temporalFolder
             },
             files: {
-                '.public/tpl/views/**/*.jade': require('../pipeline').jsFilesToInject
+                'public/tpl/views/**/*.jade': require('../pipeline').jsFilesToInject
             }
         },
 
@@ -239,7 +239,7 @@ module.exports = function(grunt) {
                 relative: true
             },
             files: {
-                '.public/tpl/views/**/*.jade': require('../pipeline').jsFilesToInject
+                'public/tpl/views/**/*.jade': require('../pipeline').jsFilesToInject
             }
         },
 
@@ -251,7 +251,7 @@ module.exports = function(grunt) {
                 appRoot: pipeline.temporalFolder
             },
             files: {
-                '.public/tpl/views/**/*.jade': ['.public/js/production.js']
+                'public/tpl/views/**/*.jade': ['public/js/production.js']
             }
         },
 
@@ -264,7 +264,7 @@ module.exports = function(grunt) {
                 relative: true
             },
             files: {
-                '.public/tpl/views/**/*.jade': ['.public/js/production.js']
+                'public/tpl/views/**/*.jade': ['public/js/production.js']
             }
         },
 
@@ -277,7 +277,7 @@ module.exports = function(grunt) {
             },
 
             files: {
-                '.public/tpl/views/**/*.jade': require('../pipeline').cssFilesToInject
+                'public/tpl/views/**/*.jade': require('../pipeline').cssFilesToInject
             }
         },
 
@@ -291,7 +291,7 @@ module.exports = function(grunt) {
             },
 
             files: {
-                '.public/tpl/views/**/*.jade': require('../pipeline').cssFilesToInject
+                'public/tpl/views/**/*.jade': require('../pipeline').cssFilesToInject
             }
         },
 
@@ -303,7 +303,7 @@ module.exports = function(grunt) {
                 appRoot: pipeline.temporalFolder
             },
             files: {
-                '.public/tpl/views/**/*.jade': ['.public/css/production.css']
+                'public/tpl/views/**/*.jade': ['public/css/production.css']
             }
         },
 
@@ -316,7 +316,7 @@ module.exports = function(grunt) {
                 relative: true
             },
             files: {
-                '.public/tpl/views/**/*.jade': ['.public/css/production.css']
+                'public/tpl/views/**/*.jade': ['public/css/production.css']
             }
         },
 
@@ -329,7 +329,7 @@ module.exports = function(grunt) {
                 appRoot: pipeline.temporalFolder
             },
             files: {
-                '.public/tpl/views/**/*.jade': ['.public/jst.js']
+                'public/tpl/views/**/*.jade': ['public/jst.js']
             }
         }
     });

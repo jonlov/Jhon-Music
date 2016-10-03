@@ -8,7 +8,7 @@
  * for matching multiple files.)
  */
 
-var temporalFolder = '.public';
+var temporalFolder = 'public';
 
 module.exports.temporalFolder = temporalFolder;
 
