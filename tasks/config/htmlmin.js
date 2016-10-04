@@ -19,8 +19,8 @@ module.exports = function(grunt) {
                 collapseWhitespace: true,
                 ignoreCustomFragments: [
                     /<%[\s\S]*?%>/,
-                    // /<\?[\s\S]*?\?>/,
-                    // /{{[\s\S]*?}}/g,
+                    /<\?[\s\S]*?\?>/,
+                    /\{{[\s\S]*?}}/g,
                     /<{{[\s\S]*?}}>/g
                 ]
             },
