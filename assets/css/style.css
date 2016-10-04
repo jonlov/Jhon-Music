@@ -94,14 +94,6 @@ footer a {
     padding-top: 15px;
 }
 
-.m-t-xxl {
-    margin-top: 50px;
-}
-
-.m-b-xxl {
-    margin-top: 50px;
-}
-
 .bg-image {
     background-repeat: no-repeat;
     background-position: center center;
@@ -111,39 +103,8 @@ footer a {
     background-size: cover;
 }
 
-.v-middle {
-    vertical-align: middle;
-}
-
-.v-center {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.pos-rlt {
-    position: relative;
-}
-
-.pos-abs {
-    position: absolute;
-}
-
-.h-full {
-    height: 100%;
-}
-
-.w-full {
-    width: 100%;
-}
-
-.justify {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.text-center {
-    text-align: center;
+.bg-top-center {
+    background-position: top center;
 }
 
 .btn-primary {
@@ -175,11 +136,6 @@ footer a {
     height: 4vh !important;
     top: 25px;
     right: 50px;
-}
-
-.bio {
-    top: 150px;
-    text-align: justify;
 }
 
 .cont {
