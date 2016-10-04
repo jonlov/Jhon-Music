@@ -181,3 +181,30 @@ footer a {
     top: 150px;
     text-align: justify;
 }
+
+.cont {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    bottom: -515px;
+}
+
+.triangle-bottomleft {
+    position: absolute;
+    width: 0px;
+    height: 0;
+    border-bottom: 590px solid white;
+    border-right: 1120px solid transparent;
+    bottom: 0px;
+    left: 0px;
+}
+
+.triangle-bottomright {
+    position: absolute;
+    width: 0px;
+    height: 0;
+    border-bottom: 590px solid white;
+    border-left: 1120px solid transparent;
+    bottom: 0px;
+    right: 0px;
+}
