@@ -47,7 +47,8 @@ var jsFiles = {
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
 var templateFilesToInject = [
-    'assets/**/*.html'
+    'assets/*.html'
+    'assets/views/**/*.html'
 ];
 
 // Prefix relative paths to source files so they point to the proper locations
