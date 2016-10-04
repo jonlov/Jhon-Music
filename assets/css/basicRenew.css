@@ -384,3 +384,14 @@
 .no-padder {
     padding: 0 !important;
 }
+
+#renew {
+    bottom: 0;
+    right: 150px;
+    height: 75px;
+    position: absolute;
+    z-index: 99999;
+    border: 0;
+    width: 60px;
+    border-radius: 2px;
+}
