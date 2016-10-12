@@ -19,8 +19,8 @@ module.exports.temporalFolder = temporalFolder;
 var cssFiles = {
     inject: [],
     concat: [
+        'bower_components/*/dist/**/*.min.css',
         'css/**/*.css',
-        'bower_components/bootstrap/dist/css/bootstrap.min.css'
         // 'assets/css/*.css'
     ]
 };
@@ -30,8 +30,9 @@ var cssFiles = {
 var jsFiles = {
     inject: [],
     concat: [
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/angular/angular.min.js',
+        'bower_components/*/dist/**/*.min.js',
+        // 'bower_components/jquery/dist/jquery.min.js',
+        // 'bower_components/Instajam/dist/instajam.min.js',
         'js/**/*.js'
     ]
 };

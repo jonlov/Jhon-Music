@@ -27,7 +27,7 @@ body {
 section {
     width: 100%;
     /*padding: 0 7%;*/
-    display: table;
+    display: block;
     margin: 0;
     max-width: none;
     background-color: #373B44;
@@ -134,10 +134,21 @@ footer a {
 }
 
 .border-text {
-    padding-left:60px;
     font-size: 40px;
     line-height: 40px;
-    height: 130px;
+    height: 140px;
     border-left: 2px solid #fff;
-    padding-top: 30px;
+    padding-top: 24px;
+    padding-left:25px;
+}
+
+
+@media (max-width: 790px) {
+    #videoImg {
+        margin-top: 85px;
+    }
+
+    #videoImg img {
+        width: 100%;
+    }
 }
