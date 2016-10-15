@@ -11,7 +11,6 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "fullpage.js": "^2.8.6",
     "Instajam": "instajam#^2.0.3"
   },
   "resolutions": {

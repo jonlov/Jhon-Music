@@ -15,6 +15,10 @@
     position: absolute;
 }
 
+.pos-fix {
+    position: fixed;
+}
+
 .h-full {
     height: 100%;
 }
