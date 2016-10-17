@@ -102,6 +102,10 @@ footer a {
     background-position: top center;
 }
 
+.bg-transparent {
+    background: transparent;
+}
+
 .btn-primary {
     background-color: rgba(255, 255, 255, 0.30) !important;
     border-color: transparent !important;
