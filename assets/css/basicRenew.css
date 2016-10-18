@@ -388,6 +388,14 @@
     padding: 0 !important;
 }
 
+.no-radius {
+    border-radius: 0 !important;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
 #renew {
     bottom: 0;
     right: 150px;

@@ -75,9 +75,8 @@
             </div>
         </div>
     </nav>
-   <!--  <div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="img/bg/bg00-static.jpg" data-natural-width="1400" data-natural-height="900"></div> -->
     <div class="pos-abs bg-image bg-browser-size bg-top-center" style="background-image: url('img/bg/bg00-dynamic.png');height: 121%;top: -40px;" data-parallax="scroll" data-position="center" data-bleed="10"data-image-src="img/bg/bg00-static.jpg"></div>
-    <section class="bg-image bg-transparent"><!-- style="background-image: url('img/bg/bg00-static.jpg')" -->
+    <section class="bg-image bg-transparent">
         <div class="row background-browser-size v-middle pos-rlt h-full w-full">
             <div class="col-xs-4 col-xs-offset-0 col-sm-3 col-sm-offset-2 col-md-2 col-md-offset-3" style="margin-top:120px;">
                 <img src="img/logo.png" width="100%">
@@ -97,69 +96,71 @@
     <div class="pos-abs bg-image bg-browser-size bg-top-center" style="margin-top:250px;" data-parallax="scroll" data-position="center" data-bleed="10" data-image-src="img/bg/bg01.jpg"></div>
     <section class="bg-image bg-transparent" style="margin-top:250px;">
         <div class="pos-abs bg-image bg-browser-size bg-top-center" style="background-image: url('img/bg/bg01-shape.png'); background-position: center bottom -64px;" data-parallax="scroll" data-image-src="img/bg/bg02.jpg"></div>
-        <div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-3 col-md-6 col-md-offset-3 justify pos-rlt v-center justify">
-            CANTANTE Y COMPOSITOR VENEZOLANO, CARAQUENO. NACIDO EN EL ANO 1996 BAJO EL NOMBRE JUAN ESTEVES(JHON). SU FAMILIA HA ESTADO CONFORMADA POR MUSICOS LO QUE LO HA AYUDADO A CRECER ENAMORADO DE LA MUSICA, CON EL APOYO DE SUS PADRES FORMO PARTE DE LA ORQUESTA SINFONICA INFANTIL DE VENEZUELA POR VARIOS ANOS LUEGO DE ESTO JHON ES IDENTIFICADO POR TOCAR VARIOS INSTRUMENTOS COMO LA GUITARRA, EL VIOLIN, EL TECLADO, BATERIA, EL BAJO ENTRE OTROS. AL TRANSCURRIR LOS ANOS CONTINUA SU SUENO AL FORMAR PARTE DE LA SEGUNDA TEMPORADA DE "GENERACION S" POR VENEVISION EN EL ANO 2014 CON UN DUO LLAMADO KEN Y JHON. A COMIENZOS DEL 2016 JHON DECIDE CONTINUAR SU CAMINO COMO SOLISTA PARA SEGUIR ESCALANDO Y VENCIENDO BARRERAS PARA LOGRAR UNA POR UNA CADA UNA DE SUS METAS
+        <div id="bio" class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-3 col-md-6 col-md-offset-3 pos-rlt v-center justify">
+            CANTANTE Y COMPOSITOR VENEZOLANO, CARAQUEÑO. NACIDO EN EL AÑO 1996 BAJO EL NOMBRE JUAN ESTEVES(JHON). SU FAMILIA HA ESTADO CONFORMADA POR MUSICOS LO QUE LO HA AYUDADO A CRECER ENAMORADO DE LA MÚSICA, CON EL APOYO DE SUS PADRES FORMO PARTE DE LA ORQUESTA SINFÓNICA INFANTIL DE VENEZUELA POR VARIOS AÑOS LUEGO DE ESTO JHON ES IDENTIFICADO POR TOCAR VARIOS INSTRUMENTOS COMO LA GUITARRA, EL VIOLIN, EL TECLADO, BATERÍA, EL BAJO ENTRE OTROS. AL TRANSCURRIR LOS AÑOS CONTINUA SU SUEÑO AL FORMAR PARTE DE LA SEGUNDA TEMPORADA DE "GENERACIÓN S" POR VENEVISION EN EL AÑO 2014 CON UN DUO LLAMADO KEN Y JHON. A COMIENZOS DEL 2016 JHON DECIDE CONTINUAR SU CAMINO COMO SOLISTA PARA SEGUIR ESCALANDO Y VENCIENDO BARRERAS PARA LOGRAR UNA POR UNA CADA UNA DE SUS METAS.
         </div>
     </section>
-    <section class="bg-transparent" >
+    <div style="background-color: #fff;width: 100%;display: block;margin: 0;max-width: none;height: 200px;"></div>
+
+    <section id="player" class="bg-transparent no-padder">
         <div class="pos-abs bg-image bg-browser-size bg-top-center" data-parallax="scroll" data-position="center" data-bleed="10" data-image-src="img/bg/bg02.jpg"></div>
-        <div class="pos-abs bg-image bg-browser-size" style="
-    border: 60px solid #fff;
-    border-right: 0;
-    border-left: 0;"></div>
+        <div class="pos-abs bg-image bg-browser-size" style="border: 60px solid #fff; border-right: 0; border-left: 0;"></div>
+
         <div class="row background-browser-size pos-rlt h-full w-full">
-            <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-1" style="margin-top: 100px;">
-                <div class="hidden-xs border-text" style="padding-top:30px;padding-left:30px;">
-                    <span style="font-size: 47px;"><b>DALE PLAY</b></span>
+            <div class="hidden-xs hidden-sm col-md-4 col-md-offset-1" style="margin-top: 180px;">
+                <div id="line" class="border-text" style="padding-top:30px;padding-left:30px;">
+                    <span id="letters" class="inline" style="font-size: 47px;
+ 
+  white-space: nowrap;"><b>DALE PLAY</b></span>
                     <br />
-                    <span style="font-size: 47px;">A LO NUEVO</span>
+                    <span id="letters" class="inline" style="font-size: 47px;line-height: 0;margin-top: -8px;
+  white-space: nowrap;">A LO NUEVO</span>
                 </div>
             </div>
-            <div class="col-xs-4 col-xs-offset-1 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-2" style="font-size: 40px;line-height: 40px;margin-top: 100px;">
+            <div class="col-xs-4 col-xs-offset-1 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-2" style="font-size: 40px;line-height: 40px;margin-top: 120px;">
                 <span style="font-size: 42;"><b>REPRODUCTOR</b></span>
             </div>
         </div>
     </section>
-    <section class="bg-image" style="background-image: url('img/bg/bg03.jpg')">
-    </section>
-    <section class="bg-transparent no-padder" >
+    <!-- <section class="bg-image" style="background-image: url('img/bg/bg03.jpg')">
+    </section> -->
+    <div style="background-color: #fff;width: 100%;display: block;margin: 0;max-width: none;height: 200px;"></div>
+
+    <section id="video" class="bg-transparent no-padder" >
         <div class="pos-abs bg-image bg-browser-size bg-top-center" data-parallax="scroll" data-position="center" data-bleed="10" data-image-src="img/bg/bg04.jpg"></div>
-        <!-- <div class="pos-abs bg-image bg-browser-size bg-top-center  " style="background-image: url('img/bg/bg04.jpg');"></div> -->
-        <div class="pos-abs bg-image bg-browser-size" style="
-    border: 60px solid #fff;
-    border-right: 0;
-    border-left: 0;"></div>
+        <div class="pos-abs bg-image bg-browser-size" style="border: 60px solid #fff; border-right: 0; border-left: 0;"></div>
+
         <div class="row background-browser-size v-middle pos-rlt h-full w-full">
-            <div class="col-xs-8 col-xs-offset-3 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-2  v-center">
-                <div class="hidden-xs border-text">
-                    <span style="font-size: 47px; padding-top:10px;"><b>MI NUEVO</b></span>
+            <div class="col-xs-8 col-xs-offset-3 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1  v-center">
+                <div id="line" class="hidden-xs border-text">
+                    <span id="letters" class="inline" style="font-size: 47px; padding-top:8px;"><b>MI NUEVO</b></span>
                     <br />
-                    <span style="font-size: 47px;">VIDEO LYRIC</span>
+                    <span id="letters" class="inline" style="font-size: 47px;line-height: 0;margin-top: -8px;">VIDEO LYRIC</span>
                 </div>
             </div>
-            <div id="videoImg" class="col-xs-8 col-xs-offset-3 col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-1 v-center">
+            <div id="videoImg" class="col-xs-8 col-xs-offset-3 col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-2 v-center">
                 <img src="img/video.png" width="110%">
             </div>
         </div>
     </section>
-    <div style="background-color: #fff;width: 100%;display: block;margin: 0;max-width: none;height: 25px;"></div>
+    <div style="background-color: #fff;width: 100%;display: block;margin: 0;max-width: none;height: 200px;"></div>
+
     <section class="bg-transparent no-padder" >
         <div class="pos-abs bg-image bg-browser-size bg-top-center" data-parallax="scroll" data-position="center" data-bleed="10" data-image-src="img/bg/bg05.jpg"></div>
-    <!-- <section class="bg-image" style="background-image: url('img/bg/bg05.jpg')"> -->
         <div class="row background-browser-size v-middle pos-rlt h-full w-full">
-            <div class="col-xs-7 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2 v-center">
+            <div class="col-xs-6 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-2 v-center">
                 <form>
                     <div class="form-group">
                         <label for="usr">Nombre:</label>
-                        <input type="text" class="form-control" id="usr">
+                        <input type="text" class="form-control no-radius" id="usr">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control no-radius" id="email">
                     </div>
                     <div class="form-group">
                         <label for="comment">Mensaje:</label>
-                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                        <textarea class="form-control no-radius" rows="5" id="comment"></textarea>
                     </div>
                     <span style="font-size: 25px;">Management & Booking - Pedro Morejon</span>
                     <br />
@@ -167,7 +168,7 @@
                     <br />
                     <span style="font-size: 25px;">+58412-6384171</span>
                     <br />
-                    <button type="submit" class="btn btn-default">Enviar</button>
+                    <button type="submit" class="btn btn-default no-radius">Enviar</button>
                 </form>
             </div>
             <iframe src="https://staging.renew.studio/api/renew/isotype" id="renew">
@@ -175,7 +176,7 @@
         </div>
     </section>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 <!--SCRIPTS-->
 <!--SCRIPTS END-->
 
