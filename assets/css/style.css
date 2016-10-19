@@ -37,6 +37,18 @@ section {
     }*/
 }
 
+.navbar {
+    position: fixed;
+    z-index: 99;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    border-radius: 0px !important;
+    background-image: inherit;
+    background-image: inherit;
+    background-image: inherit;
+}
+
 .content {
     display: table-cell;
     vertical-align: middle;
@@ -120,21 +132,14 @@ footer a {
     border-color: transparent !important;
 }
 
-.logo-menu {
-    width: 9vw;
-    height: 10vh !important;
+.navbar-collapse ul {
+    top: 3px;
 }
 
-.menu {
-    top: 25px;
-    left: 120px;
-}
-
-.sm-logos {
-    width: 2vw;
-    height: 4vh !important;
-    top: 25px;
-    right: 50px;
+.navbar-collapse li img {
+    height: 28px;
+    top: 10px;
+    right: 15px;
 }
 
 .border-text {
@@ -143,28 +148,14 @@ footer a {
     height: 140px;
     border-left: 2px solid #fff;
     padding-top: 24px;
-    padding-left:25px;
+    padding-left: 25px;
 }
-
 
 @media (max-width: 790px) {
     .videoImg {
         margin-top: 85px;
     }
-
     .videoImg img {
         width: 100%;
     }
-}
-
-.navbar {
-    display: none;
-    position: fixed;
-    z-index: 99;
-    right: 0;
-    left: 0;
-    border-radius: 0px !important;
-    background-image: inherit;
-    background-image: inherit;
-    background-image: inherit;
 }

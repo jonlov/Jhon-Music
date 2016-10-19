@@ -34,23 +34,53 @@ $(document).ready(function() {
     //     if (!--count) loaded = true;
     // });
 
-    // $('#bio #text').css('display', 'none');
-    // var bioDone = false,
-    //     bio = $('#bio').waypoint({
-    //         handler: function(direction) {
-    //             if (!bioDone) {
-    //                 $('#bio #text')
-    //                     .removeClass('animated slideInDown')
-    //                     .css({ 'display': 'block', 'opacity': '0 ' })
-    //                     .animate({ 'opacity': '1' }, 300)
-    //                     .addClass('animated slideInDown')
-    //                     .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-    //                         $(this).removeClass('animated slideInDown');
-    //                     });
-    //                 bioDone = true;
-    //             }
-    //         }
-    //     });
+
+    $('#home #letters').css('display', 'none');
+    $('#home #line').css('display', 'none');
+    $('#home #right').css('display', 'none');
+    var homeDone = false,
+        home = $('#home').waypoint({
+            handler: function(direction) {
+                if (!homeDone) {
+                    $('#home #line')
+                        .removeClass('animated slideInDown')
+                        .css({ 'display': 'block', 'opacity': '0 ' })
+                        .animate({ 'opacity': '1' }, 300)
+                        .addClass('animated slideInDown')
+                        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                            $(this).removeClass('animated slideInDown');
+                        });
+
+                    $('#home #letters').each(function(i) {
+                        $(this)
+                            .removeClass('animated slideInLeft')
+                            .css({ 'display': 'block', 'opacity': '0 ' })
+                            .animate({ 'opacity': '1' }, 300)
+                            .addClass('animated slideInLeft')
+                            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                                $(this).removeClass('animated slideInRight');
+                            });
+
+                    });
+
+                    setTimeout(function() {
+                        $('#home #right').each(function(i) {
+                            $(this)
+                                .removeClass('animated slideInRight')
+                                .css({ 'display': 'block', 'opacity': '0 ' })
+                                .animate({ 'opacity': '1' }, 300)
+                                .addClass('animated slideInRight')
+                                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                                    $(this).removeClass('animated slideInRight');
+                                });
+
+                        });
+                        homeDone = true;
+
+                    }, 700);
+                }
+            }
+        });
 
     $('#bio #text').css('display', 'none');
     var bioDone = false,
@@ -67,7 +97,8 @@ $(document).ready(function() {
                         });
                     bioDone = true;
                 }
-            }
+            },
+            offset: '20%'
         });
 
     $('#player #letters').css('display', 'none');
@@ -126,15 +157,16 @@ $(document).ready(function() {
                             .animate({ 'opacity': '1' }, 300)
                             .addClass('animated slideInRight')
                             .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                                $(this).removeClass();
+                                $(this).removeClass('animated slideInRight');
                             });
 
                     });
                     playerDone = true;
                 }
-            }
+            },
+            offset: '10%'
         });
-    // $('#letters').waypoint(function() {}, { offset: '50%' });
+    // $('#letters').waypoint(function() {}, { offset: '20%' });
     var videoDone = false;
 
     $('#video #letters').css('display', 'none');
@@ -153,14 +185,6 @@ $(document).ready(function() {
                         $(this).removeClass('animated slideInDown');
                     });
 
-                $('#video #right')
-                    .removeClass('animated slideInRight')
-                    .css({ 'display': 'block', 'opacity': '0 ' })
-                    .animate({ 'opacity': '1' }, 300)
-                    .addClass('animated slideInRight')
-                    .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                        $(this).removeClass('animated slideInRight');
-                    });
 
                 setTimeout(function() {
                     $('#video #letters').each(function(i) {
@@ -174,10 +198,42 @@ $(document).ready(function() {
                             });
                     });
 
-                    videoDone = true;
-                }, 700);
+                    setTimeout(function() {
+                        $('#video #right')
+                            .removeClass('animated slideInRight')
+                            .css({ 'display': 'block', 'opacity': '0 ' })
+                            .animate({ 'opacity': '1' }, 300)
+                            .addClass('animated slideInRight')
+                            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                                $(this).removeClass('animated slideInRight');
+                            });
+
+                        videoDone = true;
+                    }, 900);
+                }, 500);
             }
-        }
+        },
+        offset: '35%'
     });
 
+
+    $('#contact #letters').css('display', 'none');
+
+    var contactDone = false,
+        contact = $('#contact').waypoint({
+            handler: function(direction) {
+                if (!contactDone) {
+                    $('#contact #letters')
+                        .removeClass('animated slideInLeft')
+                        .css({ 'display': 'block', 'opacity': '0 ' })
+                        .animate({ 'opacity': '1' }, 300)
+                        .addClass('animated slideInLeft')
+                        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                            $(this).removeClass('animated slideInLeft');
+                        });
+                    contactDone = true;
+                }
+            },
+            offset: '35%'
+        });
 });
