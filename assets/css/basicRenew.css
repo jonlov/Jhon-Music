@@ -371,9 +371,19 @@
     padding: 50px;
 }
 
-.padder-lg {
-    padding-left: 30px;
-    padding-right: 30px;
+.padder-xs {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.padder-sm {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.padder {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .padder-md {
@@ -381,9 +391,9 @@
     padding-right: 20px;
 }
 
-.padder {
-    padding-left: 15px;
-    padding-right: 15px;
+.padder-lg {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .padder-v {
@@ -401,6 +411,9 @@
 
 .hidden {
     visibility: hidden;
+}
+.opacity-full {
+    opacity: 1 !important;
 }
 
 #renew {

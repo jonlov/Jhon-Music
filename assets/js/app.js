@@ -34,10 +34,63 @@ $(document).ready(function() {
     //     if (!--count) loaded = true;
     // });
 
+    $('nav .pos-rlt a').each(function(index, el) {
+        $(this).click(function(e) {
+            var go = '#' + $(this).attr('go').toString();
+            $('html, body').animate({
+                scrollTop: $(go).offset().top
+            }, 1000);
+        });
+    });
 
-    $('#home #letters').css('display', 'none');
-    $('#home #line').css('display', 'none');
-    $('#home #right').css('display', 'none');
+    var navDone = false,
+        nav = $('#bio').waypoint({
+            handler: function(direction) {
+
+                if (direction == 'down') {
+                    if (!navDone) {
+                        $('nav')
+                            .removeClass('animated slideOutUp')
+                            .css({ 'display': 'block', 'opacity': '0 ' })
+                            .animate({ 'opacity': '1' }, 300)
+                            .addClass('animated slideInDown')
+                            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                                $(this).removeClass('animated slideInDown');
+                            });
+                        navDone = true;
+                    }
+                } else {
+                    if (navDone) {
+                        // $('nav')
+                        //     .removeClass('animated slideOutUp')
+                        //     .css({ 'display': 'block', 'opacity': '1' })
+                        //     .animate({ 'opacity': '0' }, 300)
+                        //     .addClass('animated slideOutUp')
+                        //     .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                        //         $(this).removeClass('animated slideOutUp');
+                        //     });
+
+                        $('nav')
+                            .removeClass('animated slideInDown')
+                            .addClass('animated slideOutUp')
+                            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                                $(this).removeClass('animated slideOutUp');
+                            })
+                            .css({ 'display': 'block', 'opacity': '1' })
+                            .animate({ 'opacity': '0' }, 300);
+
+                        setTimeout(function() {
+                            $('nav').css({ 'display': 'none' });
+                        }, 300)
+                        navDone = false;
+
+                    }
+
+                }
+            },
+            offset: '60%'
+        });
+
     var homeDone = false,
         home = $('#home').waypoint({
             handler: function(direction) {
@@ -98,17 +151,17 @@ $(document).ready(function() {
                     bioDone = true;
                 }
             },
-            offset: '20%'
+            offset: '50%'
         });
 
-    $('#player #letters').css('display', 'none');
-    $('#player #line').css('display', 'none');
-    $('#player #right').css('display', 'none');
-    var playerDone = false,
-        player = $('#player').waypoint({
+    $('#music #letters').css('display', 'none');
+    $('#music #line').css('display', 'none');
+    $('#music #right').css('display', 'none');
+    var musicDone = false,
+        music = $('#music').waypoint({
             handler: function(direction) {
                 // if (direction == 'up') {
-                //     $('#player #line')
+                //     $('#music #line')
                 //         .removeClass('animated slideOutLeft')
                 //         .addClass('animated slideOutLeft')
                 //         .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
@@ -117,7 +170,7 @@ $(document).ready(function() {
                 //         .css({ 'display': 'block', 'opacity': '1' })
                 //         .animate({ 'opacity': '0' }, 300);
 
-                //     $('#player #letters').each(function(i) {
+                //     $('#music #letters').each(function(i) {
                 //         $(this)
                 //             .removeClass('animated slideOutLeft')
                 //             .addClass('animated slideOutLeft')
@@ -128,8 +181,8 @@ $(document).ready(function() {
                 //             .animate({ 'opacity': '0' }, 300);
                 //     });
                 // } else {
-                if (!playerDone) {
-                    $('#player #line')
+                if (!musicDone) {
+                    $('#music #line')
                         .removeClass('animated slideInLeft')
                         .css({ 'display': 'block', 'opacity': '0 ' })
                         .animate({ 'opacity': '1' }, 300)
@@ -138,7 +191,7 @@ $(document).ready(function() {
                             $(this).removeClass('animated slideInLeft');
                         });
 
-                    $('#player #letters').each(function(i) {
+                    $('#music #letters').each(function(i) {
                         $(this)
                             .removeClass('animated slideInLeft')
                             .css({ 'display': 'block', 'opacity': '0 ' })
@@ -150,7 +203,7 @@ $(document).ready(function() {
 
                     });
 
-                    $('#player #right').each(function(i) {
+                    $('#music #right').each(function(i) {
                         $(this)
                             .removeClass('animated slideInRight')
                             .css({ 'display': 'block', 'opacity': '0 ' })
@@ -161,22 +214,22 @@ $(document).ready(function() {
                             });
 
                     });
-                    playerDone = true;
+                    musicDone = true;
                 }
             },
-            offset: '10%'
+            offset: '50%'
         });
     // $('#letters').waypoint(function() {}, { offset: '20%' });
-    var videoDone = false;
+    var videosDone = false;
 
-    $('#video #letters').css('display', 'none');
-    $('#video #line').css('display', 'none');
-    $('#video #right').css('display', 'none');
+    $('#videos #letters').css('display', 'none');
+    $('#videos #line').css('display', 'none');
+    $('#videos #right').css('display', 'none');
 
-    var video = $('#video').waypoint({
+    var videos = $('#videos').waypoint({
         handler: function(direction) {
-            if (!videoDone) {
-                $('#video #line')
+            if (!videosDone) {
+                $('#videos #line')
                     .removeClass('animated slideInDown')
                     .css({ 'display': 'block', 'opacity': '0 ' })
                     .animate({ 'opacity': '1' }, 300)
@@ -187,7 +240,7 @@ $(document).ready(function() {
 
 
                 setTimeout(function() {
-                    $('#video #letters').each(function(i) {
+                    $('#videos #letters').each(function(i) {
                         $(this)
                             .removeClass('animated slideInLeft')
                             .css({ 'display': 'block', 'opacity': '0 ' })
@@ -199,7 +252,7 @@ $(document).ready(function() {
                     });
 
                     setTimeout(function() {
-                        $('#video #right')
+                        $('#videos #right')
                             .removeClass('animated slideInRight')
                             .css({ 'display': 'block', 'opacity': '0 ' })
                             .animate({ 'opacity': '1' }, 300)
@@ -208,12 +261,12 @@ $(document).ready(function() {
                                 $(this).removeClass('animated slideInRight');
                             });
 
-                        videoDone = true;
+                        videosDone = true;
                     }, 900);
                 }, 500);
             }
         },
-        offset: '35%'
+        offset: '50%'
     });
 
 
@@ -234,6 +287,6 @@ $(document).ready(function() {
                     contactDone = true;
                 }
             },
-            offset: '35%'
+            offset: '50%'
         });
 });
