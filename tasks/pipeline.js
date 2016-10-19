@@ -97,6 +97,7 @@ var assetsFilesToCopy = ['**/*.!(coffee|less)'];
 jsFiles.concat.map(function(path) {
     assetsFilesToCopy.push('!' + path);
 });
+assetsFilesToCopy.push('!bower_components/**/*');
 
 module.exports.assetsFilesToCopy = assetsFilesToCopy;
 
