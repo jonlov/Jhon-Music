@@ -148,11 +148,11 @@ footer a {
 
 
 @media (max-width: 790px) {
-    #videoImg {
+    .videoImg {
         margin-top: 85px;
     }
 
-    #videoImg img {
+    .videoImg img {
         width: 100%;
     }
 }

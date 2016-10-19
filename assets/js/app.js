@@ -1,80 +1,145 @@
 $(document).ready(function() {
+    // var elems = $('section').nextAll(),
+    //     count = elems.length,
+    //     animations = ['#slideInRight'],
+    //     loaded = false;
 
+    // elems.each(function(i) {
+    //     for (var i = animations.length - 1; i >= 0; i--) {
+    //         $(this).find(animations[i]).css({ 'display': 'none' });
+    //     }
+
+    //     $(this).waypoint({
+    //         handler: function() {
+    //             $(function() {
+    //                 for (var i = animations.length - 1; i >= 0; i--) {
+    //                     if (!loaded) {
+    //                         console.log('re')
+    //                         $(this)
+    //                             .find(animations[i])
+    //                             .removeClass('animated slideInRight')
+    //                             .css({ 'display': 'block', 'opacity': '0 ' })
+    //                             .animate({ 'opacity': '1' }, 300)
+    //                             .addClass('animated slideInRight')
+    //                             .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    //                                 $(this).removeClass('animated slideInRight');
+    //                             });
+    //                     }
+    //                 }
+    //             });
+
+    //             // console.log(direction)
+    //         }
+    //     });
+    //     if (!--count) loaded = true;
+    // });
+
+    // $('#bio #text').css('display', 'none');
+    // var bioDone = false,
+    //     bio = $('#bio').waypoint({
+    //         handler: function(direction) {
+    //             if (!bioDone) {
+    //                 $('#bio #text')
+    //                     .removeClass('animated slideInDown')
+    //                     .css({ 'display': 'block', 'opacity': '0 ' })
+    //                     .animate({ 'opacity': '1' }, 300)
+    //                     .addClass('animated slideInDown')
+    //                     .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    //                         $(this).removeClass('animated slideInDown');
+    //                     });
+    //                 bioDone = true;
+    //             }
+    //         }
+    //     });
+
+    $('#bio #text').css('display', 'none');
     var bioDone = false,
-    bio = $('#bio #text').waypoint({
-        handler: function(direction) {
-            // if (!bioDone) {
-                // $(function() {
+        bio = $('#bio').waypoint({
+            handler: function(direction) {
+                if (!bioDone) {
+                    $('#bio #text')
+                        .removeClass('animated slideInDown')
+                        .css({ 'display': 'block', 'opacity': '0 ' })
+                        .animate({ 'opacity': '1' }, 300)
+                        .addClass('animated slideInDown')
+                        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                            $(this).removeClass('animated slideInDown');
+                        });
+                    bioDone = true;
+                }
+            }
+        });
 
-                    // showText(
-                    //     '#bio  #text',
-                    //     'CANTANTE Y COMPOSITOR VENEZOLANO, CARAQUEÑO. NACIDO EN EL AÑO 1996 BAJO EL NOMBRE JUAN ESTEVES(JHON). SU FAMILIA HA ESTADO CONFORMADA POR MUSICOS LO QUE LO HA AYUDADO A CRECER ENAMORADO DE LA MUSICA, CON EL APOYO DE SUS PADRES FORMO PARTE DE LA ORQUESTA SINFONICA INFANTIL DE VENEZUELA POR VARIOS ANOS LUEGO DE ESTO JHON ES IDENTIFICADO POR TOCAR VARIOS INSTRUMENTOS COMO LA GUITARRA, EL VIOLIN, EL TECLADO, BATERIA, EL BAJO ENTRE OTROS. AL TRANSCURRIR LOS ANOS CONTINUA SU SUENO AL FORMAR PARTE DE LA SEGUNDA TEMPORADA DE "GENERACION S" POR VENEVISION EN EL ANO 2014 CON UN DUO LLAMADO KEN Y JHON. A COMIENZOS DEL 2016 JHON DECIDE CONTINUAR SU CAMINO COMO SOLISTA PARA SEGUIR ESCALANDO Y VENCIENDO BARRERAS PARA LOGRAR UNA POR UNA CADA UNA DE SUS METAS',
-                    //     0,
-                    //     60
-                    // );
-                // });
-                bioDone = true;
-            // }
-        }
-    });
-
-    var playerDone = false;
     $('#player #letters').css('display', 'none');
     $('#player #line').css('display', 'none');
+    $('#player #right').css('display', 'none');
+    var playerDone = false,
+        player = $('#player').waypoint({
+            handler: function(direction) {
+                // if (direction == 'up') {
+                //     $('#player #line')
+                //         .removeClass('animated slideOutLeft')
+                //         .addClass('animated slideOutLeft')
+                //         .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                //             $(this).removeClass('animated slideOutLeft');
+                //         })
+                //         .css({ 'display': 'block', 'opacity': '1' })
+                //         .animate({ 'opacity': '0' }, 300);
 
-    var player = $('#player').waypoint({
-        handler: function(direction) {
-            // if (direction == 'up') {
-            //     $('#player #line')
-            //         .removeClass('animated slideOutLeft')
-            //         .addClass('animated slideOutLeft')
-            //         .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-            //             $(this).removeClass('animated slideOutLeft');
-            //         })
-            //         .css({ 'display': 'block', 'opacity': '1' })
-            //         .animate({ 'opacity': '0' }, 300);
-
-            //     $('#player #letters').each(function(i) {
-            //         $(this)
-            //             .removeClass('animated slideOutLeft')
-            //             .addClass('animated slideOutLeft')
-            //             .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-            //                 $(this).removeClass();
-            //             })
-            //             .css({ 'display': 'block', 'opacity': '1' })
-            //             .animate({ 'opacity': '0' }, 300);
-            //     });
-            // } else {
-            if (!playerDone) {
-                $('#player #line')
-                    .removeClass('animated slideInLeft')
-                    .css({ 'display': 'block', 'opacity': '0 ' })
-                    .animate({ 'opacity': '1' }, 300)
-                    .addClass('animated slideInLeft')
-                    .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                        $(this).removeClass('animated slideInLeft');
-                    });
-
-                $('#player #letters').each(function(i) {
-                    $(this)
+                //     $('#player #letters').each(function(i) {
+                //         $(this)
+                //             .removeClass('animated slideOutLeft')
+                //             .addClass('animated slideOutLeft')
+                //             .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                //                 $(this).removeClass();
+                //             })
+                //             .css({ 'display': 'block', 'opacity': '1' })
+                //             .animate({ 'opacity': '0' }, 300);
+                //     });
+                // } else {
+                if (!playerDone) {
+                    $('#player #line')
                         .removeClass('animated slideInLeft')
                         .css({ 'display': 'block', 'opacity': '0 ' })
                         .animate({ 'opacity': '1' }, 300)
                         .addClass('animated slideInLeft')
                         .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                            $(this).removeClass();
+                            $(this).removeClass('animated slideInLeft');
                         });
 
-                });
-                playerDone = true;
+                    $('#player #letters').each(function(i) {
+                        $(this)
+                            .removeClass('animated slideInLeft')
+                            .css({ 'display': 'block', 'opacity': '0 ' })
+                            .animate({ 'opacity': '1' }, 300)
+                            .addClass('animated slideInLeft')
+                            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                                $(this).removeClass();
+                            });
+
+                    });
+
+                    $('#player #right').each(function(i) {
+                        $(this)
+                            .removeClass('animated slideInRight')
+                            .css({ 'display': 'block', 'opacity': '0 ' })
+                            .animate({ 'opacity': '1' }, 300)
+                            .addClass('animated slideInRight')
+                            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                                $(this).removeClass();
+                            });
+
+                    });
+                    playerDone = true;
+                }
             }
-        }
-    });
+        });
     // $('#letters').waypoint(function() {}, { offset: '50%' });
     var videoDone = false;
 
     $('#video #letters').css('display', 'none');
     $('#video #line').css('display', 'none');
+    $('#video #right').css('display', 'none');
 
     var video = $('#video').waypoint({
         handler: function(direction) {
@@ -88,6 +153,15 @@ $(document).ready(function() {
                         $(this).removeClass('animated slideInDown');
                     });
 
+                $('#video #right')
+                    .removeClass('animated slideInRight')
+                    .css({ 'display': 'block', 'opacity': '0 ' })
+                    .animate({ 'opacity': '1' }, 300)
+                    .addClass('animated slideInRight')
+                    .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                        $(this).removeClass('animated slideInRight');
+                    });
+
                 setTimeout(function() {
                     $('#video #letters').each(function(i) {
                         $(this)
@@ -98,7 +172,6 @@ $(document).ready(function() {
                             .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
                                 $(this).removeClass();
                             });
-
                     });
 
                     videoDone = true;
