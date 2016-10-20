@@ -1,9 +1,9 @@
 /**
- * Minify files with HtmlMin.
+ * Minify files with phpMin.
  *
  * ---------------------------------------------------------------
  *
- * Minifies client-side html `assets`.
+ * Minifies client-side php `assets`.
  *
  * For usage docs see:
  *      https://github.com/gruntjs/grunt-contrib-htmlmin

@@ -33,6 +33,50 @@ $(document).ready(function() {
     //     });
     //     if (!--count) loaded = true;
     // });
+    $.ajax({
+        type: "GET",
+        url: "api/instagram",
+        // data: $("#postcontent").serialize(),
+        dataType: 'json',
+        success: function(res) {
+            console.log(res);
+            // display_src
+            // thumbnail_src
+            // likes
+            // date
+            // is_video
+            // caption
+          
+            var html = '';
+            for (var i = 0; i < 9; i++) {
+
+                if (i == 0)
+                    html += '<div class="row background-browser-size pos-rlt h-full w-full">';
+
+                html += '<a href="https://www.instagram.com/p/'+res[i].code+'/" target="_BLANK" class="opacity-full"><div class="col-xs-6 col-xs-offset-2 col-sm-4 col-md-2 ';
+
+                if (i == 0 || i == 3 || i == 6)
+                    html += 'col-sm-offset-2 col-md-offset-2 ';
+                else
+                    html += 'col-sm-offset-0 col-md-offset-0 ';
+
+                if (i != 2 && i != 5 && i != 8)
+                    html += 'm-r-sm ';
+
+                html += 'm-b-sm" ';
+                html += 'style="background-image: url(' + res[i].display_src + '); height: 100%; min-height:293px;min-width:293px;background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;">';
+                html += '</div></a>';
+
+                if (i == 9)
+                    html += '</div>';
+            }
+
+            $("#pictures").html(html);
+        },
+        error: function(res) {
+            // console.log(res);
+        }
+    });
 
     $('nav .pos-rlt a').each(function(index, el) {
         $(this).click(function(e) {

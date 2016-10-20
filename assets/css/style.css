@@ -27,7 +27,7 @@ section {
     margin: 0;
     max-width: none;
     background-color: #373B44;
-    height: 100vh;
+    height: 100%;
     padding: 25px 0 35px;
     background: #fff;
     /*&:nth-of-type(2n) {
@@ -186,6 +186,18 @@ footer a:hover {
     border-left: 2px solid #fff;
     padding-top: 24px;
     padding-left: 25px;
+}
+
+@media (min-width: 550px) {
+    .top-15 {
+        top: 25%;
+    }
+}
+
+@media (max-width: 550px) {
+    .videoImg {
+        margin-top: 220px !important;
+    }
 }
 
 @media (max-width: 790px) {
