@@ -25,8 +25,13 @@ $(document).ready(function() {
 
                 if (i == 0)
                     html += '<div class="background-browser-size pos-rlt h-full col-xs-10 col-sm-10 col-md-10 col-centered text-center ">';
+                
+                html += '<a href="https://www.instagram.com/p/' + res[i].code + '/" target="_BLANK" class="opacity-full inline-flex ';
+                
+                if (i == 8)
+                  html += 'hidden-sm';
 
-                html += '<a href="https://www.instagram.com/p/' + res[i].code + '/" target="_BLANK" class="opacity-full inline-flex">';
+                html += '">';
                 html += '<div class="m-r-sm m-b-sm" ';
                 html += 'style="background-image: url(' + res[i].display_src + '); height: 100%; min-height:293px;min-width:293px;background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;display: inline-block;">';
                 html += '</div></a>';

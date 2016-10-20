@@ -28,16 +28,8 @@
                 t.find('.duration').html(audio.calc(a.duration));
                 t.find('.currenttime').html('00:00');
             },
-            time: function(obj, e) {
+            time: function(event) {
                 t.find('.time').val(a.currentTime);
-
-                //Gets the offset from the left so it gets the exact location.
-                var songSliderWidth = obj.offsetWidth,
-                    evtobj = window.event ? event : e;
-                // var clickLocation = evtobj.layerX - obj.offset().left;
-
-                console.log(obj);
-
                 //Fills out the slider with the appropriate position.
                 var percentageOfSong = (a.currentTime / a.duration);
                 var percentageOfSlider = t.find('.time').outerWidth() * percentageOfSong;
@@ -170,9 +162,6 @@
         t.find('.shuffle').on('click', playlist.shuffle);
     };
 
-    function setSongPosition(obj, e) {
-        console.log(obj)
-    }
     // Multiple instances
     $.fn.snd = function(s, o) {
         return this.each(function() {

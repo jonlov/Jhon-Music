@@ -441,7 +441,7 @@
     opacity: 1 !important;
 }
 
-.clear {
+.clear, .clear:after, .clear:before {
     clear: both;
 }
 
