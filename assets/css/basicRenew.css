@@ -45,6 +45,15 @@
     min-height: 100vh;
 }
 
+.inline-flex {
+    display: inline-flex;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
 .w-full {
     width: 100%;
 }

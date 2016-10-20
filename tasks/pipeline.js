@@ -33,9 +33,9 @@ var jsFiles = {
     inject: [],
     concat: [
         'js/jquery.min.js',
+        'bower_components/bootstrap/dist/js/bootstrap.min.js',
         // 'bower_components/**/dist/**/*.min.js',
         // '!bower_components/**/dist/**/**.min.js',
-        // 'bower_components/Instajam/dist/instajam.min.js',
         'js/**/*.js'
     ]
 };

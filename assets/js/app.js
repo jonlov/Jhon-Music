@@ -1,77 +1,39 @@
 $(document).ready(function() {
-    // var elems = $('section').nextAll(),
-    //     count = elems.length,
-    //     animations = ['#slideInRight'],
-    //     loaded = false;
+    $('.nav a').on('click', function() {
+        $('.btn-navbar').click(); //bootstrap 2.x
+        $('.navbar-toggle').click() //bootstrap 3.x by Richard
+    });
 
-    // elems.each(function(i) {
-    //     for (var i = animations.length - 1; i >= 0; i--) {
-    //         $(this).find(animations[i]).css({ 'display': 'none' });
-    //     }
-
-    //     $(this).waypoint({
-    //         handler: function() {
-    //             $(function() {
-    //                 for (var i = animations.length - 1; i >= 0; i--) {
-    //                     if (!loaded) {
-    //                         console.log('re')
-    //                         $(this)
-    //                             .find(animations[i])
-    //                             .removeClass('animated slideInRight')
-    //                             .css({ 'display': 'block', 'opacity': '0 ' })
-    //                             .animate({ 'opacity': '1' }, 300)
-    //                             .addClass('animated slideInRight')
-    //                             .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-    //                                 $(this).removeClass('animated slideInRight');
-    //                             });
-    //                     }
-    //                 }
-    //             });
-
-    //             // console.log(direction)
-    //         }
-    //     });
-    //     if (!--count) loaded = true;
-    // });
     $.ajax({
         type: "GET",
         url: "api/instagram",
         // data: $("#postcontent").serialize(),
         dataType: 'json',
         success: function(res) {
-            console.log(res);
+            // console.log(res);
             // display_src
             // thumbnail_src
             // likes
             // date
             // is_video
             // caption
-          
+
             var html = '';
             for (var i = 0; i < 9; i++) {
 
                 if (i == 0)
-                    html += '<div class="row background-browser-size pos-rlt h-full w-full">';
+                    html += '<div class="background-browser-size pos-rlt h-full col-xs-10 col-sm-10 col-md-10 col-centered text-center ">';
 
-                html += '<a href="https://www.instagram.com/p/'+res[i].code+'/" target="_BLANK" class="opacity-full"><div class="col-xs-6 col-xs-offset-2 col-sm-4 col-md-2 ';
-
-                if (i == 0 || i == 3 || i == 6)
-                    html += 'col-sm-offset-2 col-md-offset-2 ';
-                else
-                    html += 'col-sm-offset-0 col-md-offset-0 ';
-
-                if (i != 2 && i != 5 && i != 8)
-                    html += 'm-r-sm ';
-
-                html += 'm-b-sm" ';
-                html += 'style="background-image: url(' + res[i].display_src + '); height: 100%; min-height:293px;min-width:293px;background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;">';
+                html += '<a href="https://www.instagram.com/p/' + res[i].code + '/" target="_BLANK" class="opacity-full inline-flex">';
+                html += '<div class="m-r-sm m-b-sm" ';
+                html += 'style="background-image: url(' + res[i].display_src + '); height: 100%; min-height:293px;min-width:293px;background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;display: inline-block;">';
                 html += '</div></a>';
 
                 if (i == 9)
                     html += '</div>';
             }
 
-            $("#pictures").html(html);
+            $("#galery").html(html);
         },
         error: function(res) {
             // console.log(res);
@@ -86,11 +48,27 @@ $(document).ready(function() {
             }, 1000);
         });
     });
+    var active = { 'opacity': '1' };
+
+    $('section').waypoint({
+        handler: function(direction) {
+            var activeSection = $(this.element);
+
+            if (direction === 'down')
+                sectionId = activeSection.attr('id');
+            else
+                sectionId = activeSection.prev().prev().attr('id');
+
+            $('nav .pos-rlt a').removeClass('active');
+            $('nav .pos-rlt a[go="' + sectionId + '"]').addClass('active');
+        },
+        offset: '50%'
+    });
+
 
     var navDone = false,
         nav = $('#bio').waypoint({
             handler: function(direction) {
-
                 if (direction == 'down') {
                     if (!navDone) {
                         $('nav')
@@ -105,15 +83,6 @@ $(document).ready(function() {
                     }
                 } else {
                     if (navDone) {
-                        // $('nav')
-                        //     .removeClass('animated slideOutUp')
-                        //     .css({ 'display': 'block', 'opacity': '1' })
-                        //     .animate({ 'opacity': '0' }, 300)
-                        //     .addClass('animated slideOutUp')
-                        //     .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                        //         $(this).removeClass('animated slideOutUp');
-                        //     });
-
                         $('nav')
                             .removeClass('animated slideInDown')
                             .addClass('animated slideOutUp')
@@ -204,27 +173,6 @@ $(document).ready(function() {
     var musicDone = false,
         music = $('#music').waypoint({
             handler: function(direction) {
-                // if (direction == 'up') {
-                //     $('#music #line')
-                //         .removeClass('animated slideOutLeft')
-                //         .addClass('animated slideOutLeft')
-                //         .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                //             $(this).removeClass('animated slideOutLeft');
-                //         })
-                //         .css({ 'display': 'block', 'opacity': '1' })
-                //         .animate({ 'opacity': '0' }, 300);
-
-                //     $('#music #letters').each(function(i) {
-                //         $(this)
-                //             .removeClass('animated slideOutLeft')
-                //             .addClass('animated slideOutLeft')
-                //             .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                //                 $(this).removeClass();
-                //             })
-                //             .css({ 'display': 'block', 'opacity': '1' })
-                //             .animate({ 'opacity': '0' }, 300);
-                //     });
-                // } else {
                 if (!musicDone) {
                     $('#music #line')
                         .removeClass('animated slideInLeft')
@@ -263,7 +211,7 @@ $(document).ready(function() {
             },
             offset: '50%'
         });
-    // $('#letters').waypoint(function() {}, { offset: '20%' });
+
     var videosDone = false;
 
     $('#videos #letters').css('display', 'none');
