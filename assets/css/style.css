@@ -10,6 +10,7 @@
 }
 
 body {
+    overflow-x: hidden;
     font-family: nexa !important;
     margin: 0;
     font-weight: 500;
@@ -67,10 +68,9 @@ section {
     height: 28px;
 }
 
-.container-fluid{
+.container-fluid {
     margin-top: 5px;
 }
-
 
 *:focus {
     outline: 0 !important;

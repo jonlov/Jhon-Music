@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    $('.snd').snd('mp3/?file=1');
+
     $('.nav a').on('click', function() {
         $('.btn-navbar').click(); //bootstrap 2.x
         $('.navbar-toggle').click() //bootstrap 3.x by Richard
@@ -175,38 +177,40 @@ $(document).ready(function() {
             handler: function(direction) {
                 if (!musicDone) {
                     $('#music #line')
-                        .removeClass('animated slideInLeft')
+                        .removeClass('animated slideInDown')
                         .css({ 'display': 'block', 'opacity': '0 ' })
                         .animate({ 'opacity': '1' }, 300)
-                        .addClass('animated slideInLeft')
+                        .addClass('animated slideInDown')
                         .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                            $(this).removeClass('animated slideInLeft');
+                            $(this).removeClass('animated slideInDown');
                         });
 
-                    $('#music #letters').each(function(i) {
-                        $(this)
-                            .removeClass('animated slideInLeft')
-                            .css({ 'display': 'block', 'opacity': '0 ' })
-                            .animate({ 'opacity': '1' }, 300)
-                            .addClass('animated slideInLeft')
-                            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                                $(this).removeClass();
-                            });
 
-                    });
+                    setTimeout(function() {
+                        $('#music #letters').each(function(i) {
+                            $(this)
+                                .removeClass('animated slideInLeft')
+                                .css({ 'display': 'block', 'opacity': '0 ' })
+                                .animate({ 'opacity': '1' }, 300)
+                                .addClass('animated slideInLeft')
+                                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                                    $(this).removeClass();
+                                });
+                        });
 
-                    $('#music #right').each(function(i) {
-                        $(this)
-                            .removeClass('animated slideInRight')
-                            .css({ 'display': 'block', 'opacity': '0 ' })
-                            .animate({ 'opacity': '1' }, 300)
-                            .addClass('animated slideInRight')
-                            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                                $(this).removeClass('animated slideInRight');
-                            });
+                        setTimeout(function() {
+                            $('#music #right')
+                                .removeClass('animated slideInRight')
+                                .css({ 'display': 'block', 'opacity': '0 ' })
+                                .animate({ 'opacity': '1' }, 300)
+                                .addClass('animated slideInRight')
+                                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                                    $(this).removeClass('animated slideInRight');
+                                });
 
-                    });
-                    musicDone = true;
+                            musicDone = true;
+                        }, 900);
+                    }, 500);
                 }
             },
             offset: '50%'

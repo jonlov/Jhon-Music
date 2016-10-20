@@ -12,7 +12,8 @@
   "private": true,
   "dependencies": {
     "Instajam": "instajam#^2.0.3",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "jPlayer": "jplayer#^2.9.2"
   },
   "resolutions": {
     "angular": "~1.4.4",
