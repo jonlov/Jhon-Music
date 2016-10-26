@@ -1,60 +1,40 @@
+/*
+ *
+ * Grunt reload if domain is localhost
+ * 
+ */
+
 if (window.location.hostname == 'localhost')
     document.write('<script src="http://' + window.location.hostname + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>');
 
+/*
+ *
+ * Renew logo watermark
+ * 
+ */
 
-// var elems = $('section').nextAll(),
-//     count = elems.length,
-//     animations = ['#slideInRight'],
-//     loaded = false;
+$(document).ready(function($) {
+    var section = null,
+        style = {
+            'bottom': 0,
+            'right': '150px',
+            'height': '75px',
+            'position': 'absolute',
+            'z-index': 99999,
+            'border': 0,
+            'width': '60px',
+            'border-radius': '2px'
+        };
 
-// elems.each(function(i) {
-//     for (var i = animations.length - 1; i >= 0; i--) {
-//         $(this).find(animations[i]).css({ 'display': 'none' });
-//     }
+    if ($('section').length)
+        section = $('section');
+    else if ($('.section').length)
+        section = $('.section');
+    else if ($('#section').length)
+        section = $('#section');
 
-//     $(this).waypoint({
-//         handler: function() {
-//             $(function() {
-//                 for (var i = animations.length - 1; i >= 0; i--) {
-//                     if (!loaded) {
-//                         console.log('re')
-//                         $(this)
-//                             .find(animations[i])
-//                             .removeClass('animated slideInRight')
-//                             .css({ 'display': 'block', 'opacity': '0 ' })
-//                             .animate({ 'opacity': '1' }, 300)
-//                             .addClass('animated slideInRight')
-//                             .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-//                                 $(this).removeClass('animated slideInRight');
-//                             });
-//                     }
-//                 }
-//             });
+    if (section == null) throw new Error('There is not <section>, <div class="section"> or <div id="section"> to load Renew Logo.');
 
-//             // console.log(direction)
-//         }
-//     });
-//     if (!--count) loaded = true;
-// });
-
-// if (direction == 'up') {
-//     $('#music #line')
-//         .removeClass('animated slideOutLeft')
-//         .addClass('animated slideOutLeft')
-//         .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-//             $(this).removeClass('animated slideOutLeft');
-//         })
-//         .css({ 'display': 'block', 'opacity': '1' })
-//         .animate({ 'opacity': '0' }, 300);
-
-//     $('#music #letters').each(function(i) {
-//         $(this)
-//             .removeClass('animated slideOutLeft')
-//             .addClass('animated slideOutLeft')
-//             .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-//                 $(this).removeClass();
-//             })
-//             .css({ 'display': 'block', 'opacity': '1' })
-//             .animate({ 'opacity': '0' }, 300);
-//     });
-// } else {
+    section.last().append('<iframe src="https://staging.renew.studio/api/renew/isotype" id="renew"></iframe>');
+    $('#renew').css(style);
+});

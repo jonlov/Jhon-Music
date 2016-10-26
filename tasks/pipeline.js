@@ -34,6 +34,11 @@ var jsFiles = {
     concat: [
         'js/jquery.min.js',
         'bower_components/bootstrap/dist/js/bootstrap.min.js',
+        'js/parallax.min.js',
+        'js/renewMe.js',
+        'js/waypoints.min.js',
+        'js/app.js',
+        'js/snd.js',
         // 'bower_components/**/dist/**/*.min.js',
         // '!bower_components/**/dist/**/**.min.js',
         'js/**/*.js'
