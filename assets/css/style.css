@@ -217,8 +217,8 @@ footer a:hover {
 
 @media (max-width: 550px) {
     #home #letters {
-        margin-top: -28px !important;
-        right: -28px;
+        margin-top: 0 !important;
+        right: 0;
         position: absolute;
     }
     .videoImg {
@@ -241,6 +241,7 @@ footer a:hover {
     }
 }
 
+
 /*@media (min-height: 460px) {
     .bg-home-dinamic {
         height: 150%;
@@ -250,14 +251,20 @@ footer a:hover {
     }
 }*/
 
+
 /*@media (min-height: 580px) {*/
-    .bg-home-dinamic {
-        height: 140%;
-    }
-    .white-after-home {
-        margin-top: 6% !important;
-    }
+
+.bg-home-dinamic {
+    height: 140%;
+}
+
+.white-after-home {
+    margin-top: 6% !important;
+}
+
+
 /*}*/
+
 
 /*@media (min-height: 618px) {
     .bg-home-dinamic {
