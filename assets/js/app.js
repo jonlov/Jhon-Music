@@ -47,37 +47,11 @@ $(document).ready(function() {
         setTimeout(function() {
             $('.snd').snd('api/mp3/?file=1');
 
-            $('.nav a').on('click', function() {
-                $('.btn-navbar').click(); //bootstrap 2.x
-                $('.navbar-toggle').click() //bootstrap 3.x by Richard
-            });
-
-            var windowPath = window.location.pathname.split('/')[1];
-
-            function historyPush(path) {
-                window.history.pushState('', '', '/' + path);
-            }
-
-            function goTo(go) {
-                if ($('#' + go).length == 1) {
-                    $('html, body').animate({
-                        scrollTop: $('#' + go).offset().top // - 70
-                    }, 1000);
-                }
-            }
-            goTo(windowPath);
-
-            $('*[go]').each(function(index, el) {
-                $(this).click(function(e) {
-                    var go = $(this).attr('go').toString();
-
-                    goTo(go);
-                });
-            });
-
-            var active = { 'opacity': '1' };
+            var active = { 'opacity': '1' },
+            renewGo = window.renewGo();
 
             $('section').waypoint({
+                element: document.getElementsByTagName('section'),
                 handler: function(direction) {
                     var activeSection = $(this.element);
 
@@ -86,14 +60,15 @@ $(document).ready(function() {
                     else
                         sectionId = activeSection.prev().prev().attr('id');
 
-                    $('nav .pos-rlt a').removeClass('active');
-                    $('nav .pos-rlt a[go="' + sectionId + '"]').addClass('active');
-
-                    historyPush(sectionId);
+                    renewGo.historyPush(sectionId);
                 },
                 offset: '50%'
             });
 
+            Waypoint.disableAll();
+            $(window).on('load', function() {
+                Waypoint.enableAll();
+            });
 
             var navDone = false,
                 nav = $('#bio').waypoint({

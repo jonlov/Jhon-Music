@@ -26,7 +26,7 @@ module.exports = function(grunt) {
             },
             files: [{
                     expand: true,
-                    src: ['**/*.html'],
+                    src: ['**/*.{html,php}','!**/class.*.php'],
                     dest: pipeline.temporalFolder,
                     cwd: pipeline.temporalFolder
                 }]

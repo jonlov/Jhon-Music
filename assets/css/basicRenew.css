@@ -436,6 +436,10 @@
     border-radius: 0 !important;
 }
 
+.no-border {
+    border: 0 !important;
+}
+
 .hidden {
     visibility: hidden;
 }

@@ -41,6 +41,7 @@ var jsFiles = {
         'js/parallax.min.js',
         'js/waypoints.min.js',
         'js/snd.js',
+        'js/renewGo.js',
         'js/app.js',
         'js/form.js'
         // 'bower_components/**/dist/**/*.min.js',
