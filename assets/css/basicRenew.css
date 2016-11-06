@@ -428,6 +428,9 @@
 .no-padder {
     padding: 0 !important;
 }
+.no-padder-top {
+    padding-top: 0 !important;
+}
 
 .no-radius {
     border-radius: 0 !important;

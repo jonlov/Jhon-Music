@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    @@loading
+    @@renewLoader
     <nav class="navbar pos-fix navbar-default" style="display: none;">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -53,9 +53,9 @@
     </nav>
     <div class="pos-abs bg-image bg-browser-size bg-top-center bg-home-dinamic" style="background-image: url('img/bg/bg00-dynamic.png');top: -40px;" data-parallax="scroll" data-position="center" data-bleed="10" data-image-src="img/bg/bg00-static.jpg"></div>
     <div class="pos-abs bg-image bg-browser-size bg-top-center bg-home-dinamic hidden-sm hidden-md hidden-lg" style="background-image: url('img/bg/bg00-dynamic.png');top: -40px;"></div>
-    <section id="home" class="bg-image bg-transparent h-full-vh">
+    <section id="home" class="bg-image bg-transparent h-full-vh no-padder-top">
         <div class="row background-browser-size v-middle pos-rlt h-full w-full">
-            <div class="arrow-down bounce fa fa-angle-double-down"></div>
+            <div go="bio" class="arrow-down bounce fa fa-angle-double-down"></div>
             <div id="letters" class="col-xs-4 col-xs-offset-0 col-sm-3 col-sm-offset-1 col-md-2 col-md-offset-3" style="margin-top:120px;display:none;">
                 <img src="img/logo.png" width="100%">
             </div>
@@ -70,7 +70,7 @@
             </div>
         </div>
     </section>
-    <div class="white-after-home" style="background-color: #fff;width: 100%;display:block;margin: 0;max-width: none;height: 200px;"></div>
+    <div class="white-after-home"></div>
     <section id="bio" class="bg-image bg-transparent h-full-vh" style="margin-top:250px;">
         <div class="pos-abs bg-image bg-browser-size bg-top-center" style="background-image: url('img/bg/bg01-shape.png'); background-position: center bottom -64px;" data-parallax="scroll" data-image-src="img/bg/bg01.jpg"></div>
         <div id="text" class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-3 col-md-6 col-md-offset-3 pos-rlt justify top-15"><b>
@@ -125,7 +125,7 @@
         </div>
     </section>
     <div style="background-color: #fff;width: 100%;display: block;margin: 0;max-width: none;height: 200px;"></div>
-    <section id="galery" class="bg-transparent no-padder clear"></section>
+    <section id="galery" class="bg-transparent no-padder clear" style="padding-top:70px !important;"></section>
     <div style="background-color: #fff;width: 100%;display: block;margin: 0;max-width: none;height: 200px;"></div>
     <section id="videos" class="bg-transparent no-padder h-full-vh">
         <div class="pos-abs bg-image bg-browser-size bg-top-center" data-parallax="scroll" data-position="center" data-bleed="10" data-image-src="img/bg/bg04.jpg"></div>
@@ -151,7 +151,7 @@
     <section id="contact" class="bg-transparent no-padder h-full-vh">
         <div class="pos-abs bg-image bg-browser-size bg-top-center" data-parallax="scroll" data-position="center" data-bleed="10" data-image-src="img/bg/bg05.jpg"></div>
         <div class="row background-browser-size v-middle pos-rlt h-full w-full">
-            <div id="letters" class="col-xs-7 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-2 top-20">
+            <div id="letters" class="col-xs-7 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-2" style="top: 70px;">
                 <div class="alert alert-dismissible alert-success hide" style="margin-top: 60px;"></div>
                 <form id="formContact" method="post" action="#contact">
                     <h2 class="text-center">Contacto</h2>
