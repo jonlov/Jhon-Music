@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.snd').snd('mp3/?file=1');
+    $('.snd').snd('api/mp3/?file=1');
 
     $('.nav a').on('click', function() {
         $('.btn-navbar').click(); //bootstrap 2.x
@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     $.ajax({
         type: "GET",
-        url: "api/instagram",
+        url: "api/instagram/",
         // data: $("#postcontent").serialize(),
         dataType: 'json',
         success: function(res) {

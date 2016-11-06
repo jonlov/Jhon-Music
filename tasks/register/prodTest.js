@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
     grunt.config.set('pkg', grunt.file.readJSON('package.json'));
 
-    grunt.registerTask('prod', [
+    grunt.registerTask('prodTest', [
         'compileAssetsProd',
         'concat:js',
         'concat:css',
@@ -16,10 +16,10 @@ module.exports = function(grunt) {
         'htmlmin',
         'phpmin',
         'hazy:php',
-        'imagemin',
+        // 'imagemin',
         
         // // 'uncss',
-        // 'php',
-        // 'watch'
+        'php',
+        'watch'
     ]);
 };

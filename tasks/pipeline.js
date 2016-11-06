@@ -30,18 +30,21 @@ var cssFiles = {
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFiles = {
-    inject: [],
-    concat: [
+    inject: [
         'js/jquery.min.js',
+        'js/renewMe.js' //--------------- > > > renewMe.js HAVE JQUERY
+        ],
+    concat: [
+        // 'js/jquery.min.js', //  --------------- > > > renewMe.js HAVE JQUERY
+        
         'bower_components/bootstrap/dist/js/bootstrap.min.js',
         'js/parallax.min.js',
-        'js/renewMe.js',
         'js/waypoints.min.js',
         'js/app.js',
-        'js/snd.js',
+        'js/form.js',
+        'js/snd.js'
         // 'bower_components/**/dist/**/*.min.js',
         // '!bower_components/**/dist/**/**.min.js',
-        'js/**/*.js'
     ]
 };
 
@@ -98,14 +101,24 @@ module.exports.jsFilesToConcatProd = jsFiles.concat.map(function(path) {
 // 
 // COPY FILES 
 //
-var assetsFilesToCopy = ['**/*.!(coffee|less)'];
+var assetsFilesToCopy = ['**/*.!(coffee|less)', '**/.*'];
 jsFiles.concat.map(function(path) {
+    assetsFilesToCopy.push('!' + path);
+});
+cssFiles.concat.map(function(path) {
     assetsFilesToCopy.push('!' + path);
 });
 assetsFilesToCopy.push('!bower_components/**/*');
 
 module.exports.assetsFilesToCopy = assetsFilesToCopy;
 
+module.exports.stripBanners = true;
+var renewDomain = 'https://renew.studio';
+module.exports.renewDomain = renewDomain;
+
+module.exports.banner = '/*! PLEASE DO NOT TOUCH THIS FILE YOU CAN PERMANTLY DAMAGE YOUR APPLICATION, CONTACT THE RENEW TEAM TO MODIFY\n' +
+    ' * <%= grunt.template.today("yyyy") %> - Renew Studio ('+renewDomain+')\n'+
+    ' * <%= pkg.name %> v<%= pkg.version %> */';
 
 // 
 // TEMPLATE FILES 

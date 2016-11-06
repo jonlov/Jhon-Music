@@ -7,12 +7,9 @@
   	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		require 'PHPMailerAutoload.php';
 
-		$data = file_get_contents('php://input');
-		$data = json_decode($data, TRUE);
-
-		$name = $data['name'];
-		$email = $data['email'];
-		$message = $data['message'];
+		$name = htmlspecialchars($_POST['name']);
+		$email = htmlspecialchars($_POST['email']);
+		$message = htmlspecialchars($_POST['message']);
 
 		if(preg_match( "/[\r\n]/", $data['name']) || preg_match( "/[\r\n]/", $data['email']) || preg_match( "/[\r\n]/", $data['message'])) throwError('Error.');
 		if(count($data['message']) >= 30) throwError('Message should be at least 30 characteres.');
@@ -26,12 +23,12 @@
 		$mail->isSMTP();                                      // Set mailer to use SMTP
 		$mail->Host = 'cpanel-006-slc.hostingww.com';  // Specify main and backup SMTP servers
 		$mail->SMTPAuth = true;                               // Enable SMTP authentication
-		$mail->Username = 'ppr299vz';                 // SMTP username
-		$mail->Password = 'Poepolanco1-';                           // SMTP password
+		$mail->Username = 'no-reply@jhonmusic.com';                 // SMTP username
+		$mail->Password = 'B+x7qB1VTP?V';                           // SMTP password
 		$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 		$mail->Port = 587;                                    // TCP port to connect to
 
-		$mail->setFrom('contact@jhonmusic.com', $name . ' - JhonMusic.com');
+		$mail->setFrom('no-reply@jhonmusic.com', $name . ' - JhonMusic.com');
 		$mail->addAddress('rockjonathan18@gmail.com', $name);     // Add a recipient
 		// $mail->addReplyTo('info@example.com', 'Information');
 		
