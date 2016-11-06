@@ -253,7 +253,7 @@ $(document).ready(function($) {
         if (window.location.hostname == 'localhost')
             $.ajax({
                 type: "GET",
-                url: '@@renewDomain',
+                url: 'http://localhost:1337/',
                 success: function(res) {
                     return cb(true);
                 },
