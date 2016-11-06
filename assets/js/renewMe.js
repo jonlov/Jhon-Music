@@ -262,12 +262,12 @@ $(document).ready(function($) {
 
                 }
             });
-        else return cb(true);
+        else return cb(false);
     }
 
     localhostActive(function(isActive) {
         if (isActive)
-            section.last().append('<iframe src="@@renewDomain/api/renew/isotype" id="renew"></iframe>');
+            section.last().append('<iframe src="http://localhost:1337/api/renew/isotype" id="renew"></iframe>');
         else
             section.last().append('<iframe src="@@renewDomainDevReal/api/renew/isotype" id="renew"></iframe>');
         

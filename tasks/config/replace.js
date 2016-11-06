@@ -22,6 +22,9 @@ module.exports = function(grunt) {
                 }, {
                     match: 'renewDomain',
                     replacement: pipeline.renewDomain
+                }, {
+                    match: 'renewDomainDevReal',
+                    replacement: pipeline.renewDomain
                 }]
             },
             files: [{
