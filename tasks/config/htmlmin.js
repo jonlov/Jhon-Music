@@ -6,7 +6,7 @@
  * Minifies client-side html `assets`.
  *
  * For usage docs see:
- * 		https://github.com/gruntjs/grunt-contrib-htmlmin
+ *      https://github.com/gruntjs/grunt-contrib-htmlmin
  *
  */
 var pipeline = require('../pipeline');
