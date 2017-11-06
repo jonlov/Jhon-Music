@@ -1,4 +1,9 @@
-/*! Created by Jonathan Lovera for follow links to sections | jonlov.github.io */
+/*!
+ * http://jonlov.github.io/
+ * Scroll to sections via id when an user click a link
+ * Developed by Jonathan Lovera
+ * MIT license
+ */
 
 if ("undefined" == typeof jQuery) throw new Error("RenewGo JavaScript requires jQuery");
 
@@ -10,10 +15,10 @@ window.renewGo = function() {
                 $('a[go="' + path + '"]').addClass('active');
             });
         },
-        // historyPush = function(path) {
-        //     // if (loaded) window.history.pushState('', '', '' + path);
-        //     active(path);
-        // },
+        historyPush = function(path) {
+            // if (loaded) window.history.pushState('', '', '' + path);
+            active(path);
+        },
         goTo = function(path) {
             (path.split('#').length > 1) ? path = path.split('#')[1]: path = path;
 
@@ -50,7 +55,7 @@ window.renewGo = function() {
     });
 
     return {
-        // historyPush: historyPush,
+        historyPush: historyPush,
         goTo: goTo
     }
 }

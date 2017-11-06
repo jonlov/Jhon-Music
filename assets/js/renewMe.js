@@ -1,4 +1,9 @@
-/*! Created by Jonathan Lovera to add logo easily at the bottom | jonlov.github.io */
+/*!
+ * http://jonlov.github.io/
+ * Add logo at the bottom automaticaly
+ * Developed by Jonathan Lovera
+ * MIT license
+ */
 
 if ("undefined" == typeof jQuery) throw new Error("Renew JavaScript requires jQuery");
 
@@ -152,14 +157,15 @@ $(document).ready(function($) {
                 'bottom': 0,
                 'right': '150px',
                 'height': '75px',
-                'position': 'absolute',
+                'position': 'fixed',
                 'z-index': 99999,
                 'padding-top': '10px',
                 'border': 0,
                 'width': '60px',
                 'border-radius': '2px',
                 'background': '#fff',
-                'text-align':'center'
+                'text-align':'center',
+                'opacity': 1
             },
             ready = function() {
                 $('renewLoader').css({ display: 'none' });

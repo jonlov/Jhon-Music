@@ -1,10 +1,9 @@
 $(document).ready(function() {
     function instagramAjax() {
-        // NOTE:  This function must return the value 
-        //        from calling the $.ajax() method.
         return $.ajax({
             type: "GET",
-            url: "api/instagram/",
+            // url: "api/instagram/instagram-php-scraper.php",
+            url: "api/instagram/example.json",
             // data: $("#postcontent").serialize(),
             dataType: 'json',
             success: function(res) {
