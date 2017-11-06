@@ -1,7 +1,7 @@
 Jhon Music Website
 ==
 
-Jhon Music Website was developed as a landing page using JQuery, HTML5, CSS3, gulp and PHP.
+Jhon Music Website was develop as a landing page using JQuery, HTML5, CSS3, GULP and PHP.
 
 It has a script in php to download mp3 files and send mails via a form thru AJAX.
 
