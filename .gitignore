@@ -82,6 +82,8 @@ node_modules
 .public
 public
 dump.rdb
+node_modules
+assets/bower_components
 
 
 
