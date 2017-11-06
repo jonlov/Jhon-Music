@@ -3,7 +3,7 @@
  *
  * ---------------------------------------------------------------
  *
- * Minifies css files and places them into .tmp/public/min directory.
+ * Minifies css files and places them into .tmp/docs/min directory.
  *
  * For usage docs see:
  *      https://github.com/gruntjs/grunt-contrib-cssmin
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                 htmlroot: '../' + pipeline.temporalFolder
             },
             files: {
-                src: ['public/index.html']
+                src: ['docs/index.html']
             }
             // options: {
             // files: [{

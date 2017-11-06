@@ -1,3 +1,5 @@
+/*! Created by Jonathan Lovera for follow links to sections | jonlov.github.io */
+
 if ("undefined" == typeof jQuery) throw new Error("RenewGo JavaScript requires jQuery");
 
 window.renewGo = function() {
@@ -8,12 +10,14 @@ window.renewGo = function() {
                 $('a[go="' + path + '"]').addClass('active');
             });
         },
-        historyPush = function(path) {
-            if (loaded) window.history.pushState('', '', '/' + path);
-            active(path);
-        },
+        // historyPush = function(path) {
+        //     // if (loaded) window.history.pushState('', '', '' + path);
+        //     active(path);
+        // },
         goTo = function(path) {
             (path.split('#').length > 1) ? path = path.split('#')[1]: path = path;
+
+            if (!path) path = 'home';
 
             if ($('#' + path).length == 1 || $.fn.pagepiling) {
                 (!$.fn.pagepiling) ?
@@ -35,15 +39,18 @@ window.renewGo = function() {
 
     $(document).ready(function() {
         $(window).on("load", function() {
+            // console.log(window.location.pathname.split('/')[1]);
+
             goTo(window.location.pathname.split('/')[1]);
-            setTimeout(function() {   
+
+            setTimeout(function() {
                 loaded = true;
             });
         });
     });
 
     return {
-        historyPush: historyPush,
+        // historyPush: historyPush,
         goTo: goTo
     }
 }

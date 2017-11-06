@@ -1,14 +1,14 @@
 {
   "name": "Jhon-Music",
   "version": "1.0.0",
-  "description": "Test9",
+  "description": "Landing page build with JQuery, html5, css",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/Renew/Jhon-Music.git"
+    "url": "https://github.com/jonlov/Jhon-Music.git"
   },
   "dependencies": {
     "bower": "^1.7.9",
@@ -36,9 +36,8 @@
     "js-obfuscator": "^0.1.1"
   },
   "authors": [
-    "Renew Studio Team <contact@renew.studio>",
-    "Robert Williams <robert151196@gmail.com>",
-    "Jonathan Lovera <jonathan@renew.studio>"
+    "Jonathan Lovera <jonathan@rootplace.com>",
+    "Robert Williams <robert151196@gmail.com>"
   ],
   "license": "ISC",
   "devDependencies": {
@@ -58,6 +57,5 @@
     "grunt-php": "^1.5.1",
     "grunt-sync": "~0.0.4",
     "include-all": "^1.0.6"
-  },
-  "license": "ISC"
+  }
 }

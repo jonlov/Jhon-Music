@@ -1,3 +1,5 @@
+/*! Created by Jonathan Lovera to add logo easily at the bottom | jonlov.github.io */
+
 if ("undefined" == typeof jQuery) throw new Error("Renew JavaScript requires jQuery");
 
 /* Base64 Object */
@@ -85,7 +87,7 @@ var Base64 = {
 /*
  *
  * Permited domains, domains that don't need confirmation
- * 
+ *
  */
 
 var renewDomain = '@@renewDomain',
@@ -136,7 +138,7 @@ localhostActive(function(isActive) {
 /*
  *
  * Grunt reload if domain is localhost
- * 
+ *
  */
 
 if (window.location.hostname == 'localhost')
@@ -152,111 +154,24 @@ $(document).ready(function($) {
                 'height': '75px',
                 'position': 'absolute',
                 'z-index': 99999,
+                'padding-top': '10px',
                 'border': 0,
                 'width': '60px',
-                'border-radius': '2px'
+                'border-radius': '2px',
+                'background': '#fff',
+                'text-align':'center'
             },
             ready = function() {
                 $('renewLoader').css({ display: 'none' });
                 // $("script").remove();
             };
 
-        /*
-         *
-         * Renew token website active
-         * 
-         */
-        ready();
-        // function destroyAll() {
-        //     document.body.innerHTML = '';
-        //     document.documentElement.innerHTML = '';
-        // }
-
-        // var renewActivatedCount = renewCheckCount = renewMeExistCount = 0;
-
-        // function renewCheck(cb) {
-        //     $.ajax({
-        //         type: "GET",
-        //         url: renewDomain + "/api/renew/check?g=@@gitID",
-        //         success: function(res) {
-        //             return cb(true);
-        //         },
-        //         error: function(res) {
-        //             if (res.status == 404 || renewCheckCount == 10) return cb(false);
-        //             else if(res.status >= 500)
-        //                 cb(true);
-        //             else
-        //                 setTimeout(function() {
-        //                     renewCheck(function() {});
-        //                     renewCheckCount++;
-        //                 }, 5000);
-
-        //         }
-        //     });
-        // }
-
-        // function renewMeExist(cb) {
-        //     $.ajax({
-        //         type: "GET",
-        //         url: "api/.renewMe",
-        //         success: function(res) {
-        //             var date = (new Date().getTime() / 1000),
-        //                 split = res.split('$'),
-        //                 expDate = split[1];
-
-        //             if (split.length > 2 || split.length == 0)
-        //                 return cb(false);
-
-        //             else
-        //                 return renewCheck(function(valid) {
-        //                     return cb(valid);
-        //                 });
-        //         },
-        //         error: function(res) {
-        //             if (res.status == 404 || renewMeExistCount == 10) return cb(false);
-        //             else
-        //                 setTimeout(function() {
-        //                     renewMeExist(function() {});
-        //                     renewMeExistCount++;
-        //                 }, 5000);
-        //         }
-        //     });
-        // }
-
-        // function renewActivated() {
-        //     var count = 0;
-
-        //     if (isLocalhostActive || !isPermitedDomain())
-        //         $.ajax({
-        //             type: "GET",
-        //             url: "api/",
-        //             success: function(res) {
-        //                 if (res == false)
-        //                     return renewMeExist(function(exist) {
-        //                         if (exist) ready();
-        //                         else destroyAll();
-        //                     });
-        //                 else return destroyAll();
-        //             },
-        //             error: function(res) {
-        //                 if (res.status == 400) ready();
-        //                 else if (res.status == 404 || renewActivatedCount == 10) destroyAll();
-        //                 else
-        //                     setTimeout(function() {
-        //                         renewActivated();
-        //                         renewActivatedCount++;
-        //                     }, 5000);
-        //             }
-        //         });
-
-        //     else ready();
-        // }
-        // renewActivated();
+ready();
 
         /*
          *
          * Renew logo watermark
-         * 
+         *
          */
 
         if ($('section').length)
@@ -269,10 +184,12 @@ $(document).ready(function($) {
         if (section == null) throw new Error('There is not <section>, <div class="section"> or <div id="section"> to load Renew Logo.');
         section.last().css('position', 'absolute');
 
-        if (isLocalhostActive)
-            section.last().append('<iframe src="http://localhost:1337/api/renew/isotype" id="renew"></iframe>');
-        else
-            section.last().append('<iframe src="@@renewDomainDevReal/api/renew/isotype" id="renew"></iframe>');
+        $('<a id="renew" href="@@renewDomainDevReal"><img src="@@renewDomainDevReal/assets/img/logo-80x82.png" width="80%" /></a>').insertAfter(section.last());
+
+        // if (isLocalhostActive)
+        //     section.last().append('<iframe src="http://localhost:1337/api/renew/isotype" id="renew"></iframe>');
+        // else
+        //     section.last().append('<iframe src="@@renewDomainDevReal/api/renew/isotype" id="renew"></iframe>');
 
         $('#renew').css(style);
     });
